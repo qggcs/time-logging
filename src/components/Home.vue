@@ -1,10 +1,18 @@
 <template>
   <div class="layout">
     <div class="header">
-      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
-        <el-menu-item index="1">任务管理</el-menu-item>
+      <el-menu class="el-menu-demo" mode="horizontal">
+        <el-menu-item index="1" @click="navigateByUrl('/task_personal')">
+          <template slot="title">
+            <i class="el-icon-location"></i>
+            <span>任务管理</span>
+          </template>
+        </el-menu-item>
         <el-submenu index="2">
-          <template slot="title">时间记录</template>
+          <template slot="title">
+            <i class="el-icon-menu"></i>
+            <span>时间记录</span>
+          </template>
           <el-menu-item index="2-1">选项1</el-menu-item>
           <el-menu-item index="2-2">选项2</el-menu-item>
           <el-menu-item index="2-3">选项3</el-menu-item>
@@ -15,19 +23,27 @@
             <el-menu-item index="2-4-3">选项3</el-menu-item>
           </el-submenu>
         </el-submenu>
-        <el-menu-item index="3">账单相关</el-menu-item>
+        <el-menu-item index="3">
+          <i class="el-icon-document"></i>
+          <span>账单相关</span>
+        </el-menu-item>
         <el-menu-item index="4">
-          <a href="https://www.ele.me" target="_blank">系统管理</a>
+          <i class="el-icon-setting"></i>
+          <span>系统管理</span>
         </el-menu-item>
       </el-menu>
     </div>
     <div class="container">
-      <div class="content">content</div>
-      <router-view />
+      <div class="content">
+        <router-view />
+      </div>
     </div>
     <div class="footer">
       <div class="copyright">
-        <div class="footer-content">课程内容版权均归 time logging有限公司 所有 辽ICP备0000000号</div>
+        <div class="footer-content">
+          内容版权均归
+          <strong>time logging</strong> 有限公司所有 辽ICP备0000000号
+        </div>
       </div>
     </div>
   </div>
@@ -43,6 +59,13 @@ export default {
     return {
       news: "hello world!"
     };
+  },
+  methods: {
+    navigateByUrl(url) {
+      this.$router.push({
+        path: url
+      });
+    }
   }
 };
 </script>
@@ -63,12 +86,11 @@ export default {
 .container {
   margin: 30px 5%;
   min-height: 400px;
-  height: 400px;
 }
 .content {
   background: #ffffff;
   margin: 10px auto;
-  padding: 10px 10px;
+  padding: 2% 4%;
   height: 100%;
   box-shadow: 0px 0px 5px 5px #e4e7ed;
   border-radius: 3px;
