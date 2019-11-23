@@ -1,0 +1,40 @@
+Date : 2019-11-23 17:17:38
+Directory : d:\vscode\angular\time-logging\src
+Total : 10 files,  688 codes, 3 comments, 32 blanks, all 723 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| Vue        |          7 |        621 |          3 |         22 |        646 |
+| JavaScript |          3 |         67 |          0 |         10 |         77 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                    | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                       |         10 |        688 |          3 |         32 |        723 |
+| components                                                              |          6 |        614 |          3 |         19 |        636 |
+| components\task                                                         |          2 |        287 |          0 |          5 |        292 |
+| components\timerecord                                                   |          3 |        238 |          3 |         10 |        251 |
+| router                                                                  |          1 |         39 |          0 |          4 |         43 |
+| store                                                                   |          1 |         13 |          0 |          3 |         16 |
++-------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\vscode\angular\time-logging\src\App.vue                              | Vue        |          7 |          0 |          3 |         10 |
+| d:\vscode\angular\time-logging\src\components\Home.vue                  | Vue        |         89 |          0 |          4 |         93 |
+| d:\vscode\angular\time-logging\src\components\task\task-management.vue  | Vue        |        139 |          0 |          1 |        140 |
+| d:\vscode\angular\time-logging\src\components\task\task-personal.vue    | Vue        |        148 |          0 |          4 |        152 |
+| d:\vscode\angular\time-logging\src\components\timerecord\timerecord.vue | Vue        |        166 |          0 |          7 |        173 |
+| d:\vscode\angular\time-logging\src\components\timerecord\tredit.vue     | Vue        |         12 |          0 |          1 |         13 |
+| d:\vscode\angular\time-logging\src\components\timerecord\trshow.vue     | Vue        |         60 |          3 |          2 |         65 |
+| d:\vscode\angular\time-logging\src\main.js                              | JavaScript |         15 |          0 |          3 |         18 |
+| d:\vscode\angular\time-logging\src\router\index.js                      | JavaScript |         39 |          0 |          4 |         43 |
+| d:\vscode\angular\time-logging\src\store\index.js                       | JavaScript |         13 |          0 |          3 |         16 |
+| Total                                                                   |            |        688 |          3 |         32 |        723 |
++-------------------------------------------------------------------------+------------+------------+------------+------------+------------+

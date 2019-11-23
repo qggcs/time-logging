@@ -4,32 +4,26 @@
       <el-menu class="el-menu-demo" mode="horizontal">
         <el-menu-item index="1" @click="navigateByUrl('/task_personal')">
           <template slot="title">
-            <i class="el-icon-location"></i>
+            <i class="el-icon-document"></i>
             <span>任务管理</span>
           </template>
         </el-menu-item>
         <el-submenu index="2">
           <template slot="title">
-            <i class="el-icon-menu"></i>
-            <span>时间记录</span>
+            <i class="el-icon-timer"></i>
+            <span>时间记录管理</span>
           </template>
-          <el-menu-item index="2-1">选项1</el-menu-item>
-          <el-menu-item index="2-2">选项2</el-menu-item>
-          <el-menu-item index="2-3">选项3</el-menu-item>
-          <el-submenu index="2-4">
-            <template slot="title">选项4</template>
-            <el-menu-item index="2-4-1">选项1</el-menu-item>
-            <el-menu-item index="2-4-2">选项2</el-menu-item>
-            <el-menu-item index="2-4-3">选项3</el-menu-item>
-          </el-submenu>
+          <el-menu-item index="2-1" @click="navigateByUrl('/timerecord')">时间记录</el-menu-item>
+          <el-menu-item index="2-2" @click="navigateByUrl('/trshow')">时间记录展示</el-menu-item>
+          <el-menu-item index="2-3" @click="navigateByUrl('/tredit')">时间记录修改</el-menu-item>
         </el-submenu>
         <el-menu-item index="3">
-          <i class="el-icon-document"></i>
+          <i class="el-icon-coin"></i>
           <span>账单相关</span>
         </el-menu-item>
         <el-menu-item index="4">
           <i class="el-icon-setting"></i>
-          <span>系统管理</span>
+          <span>系统设置</span>
         </el-menu-item>
       </el-menu>
     </div>

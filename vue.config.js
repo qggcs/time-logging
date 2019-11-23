@@ -12,5 +12,8 @@
      config.resolve.symlinks(true);
    },
 
+   css: {
+     extract: false
+   }
 
  }
