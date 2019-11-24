@@ -22,7 +22,7 @@
     </div>
     <div class="task-operation">
       <el-button @click="dialogVisible=true">添加个人任务</el-button>
-      <el-button @click="navigateByUrl('/task_management')">员工任务管理</el-button>
+      <el-button @click="navigateByUrl('/home/task_management')" :disabled="mana">员工任务管理</el-button>
     </div>
 
     <el-dialog title="添加个人任务" :visible.sync="dialogVisible">
@@ -68,21 +68,21 @@ export default {
           taskName: "中铁集团冶炼项目",
           tag: "分配",
           startTime: "2019-11-23 15:00:00",
-          endTime: "2019-11-27 16:00:00",
+          endTime: "2019-12-29 8:00:00",
           status: "未完成"
         },
         {
           taskName: "技术培训",
           tag: "个人",
           startTime: "2019-11-23 15:00:00",
-          endTime: "2019-11-27 16:00:00",
+          endTime: "2019-11-27 15:00:00",
           status: "已完成"
         },
         {
           taskName: "产品升级维护",
           tag: "分配",
-          startTime: "2019-11-23 15:00:00",
-          endTime: "2019-11-27 16:00:00",
+          startTime: "2019-10-23 8:30:00",
+          endTime: "2019-11-00 22:00:00",
           status: "已完成"
         }
       ],
@@ -97,7 +97,8 @@ export default {
         startTime: "",
         endTime: "",
         status: "未完成"
-      }
+      },
+      mana: false
     };
   },
   methods: {
@@ -136,6 +137,9 @@ export default {
     }
   },
   created() {
+    this.sys = sessionStorage.getItem("sys") === "0" ? false : true;
+    this.mana = sessionStorage.getItem("mana") === "0" ? false : true;
+    this.loading = true;
     setTimeout(() => {
       this.loading = false;
     }, 1000);

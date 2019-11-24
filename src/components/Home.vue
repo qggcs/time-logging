@@ -2,7 +2,7 @@
   <div class="layout">
     <div class="header">
       <el-menu class="el-menu-demo" mode="horizontal">
-        <el-menu-item index="1" @click="navigateByUrl('/task_personal')">
+        <el-menu-item index="1" @click="navigateByUrl('/home/task_personal')">
           <template slot="title">
             <i class="el-icon-document"></i>
             <span>任务管理</span>
@@ -13,15 +13,15 @@
             <i class="el-icon-timer"></i>
             <span>时间记录管理</span>
           </template>
-          <el-menu-item index="2-1" @click="navigateByUrl('/timerecord')">时间记录</el-menu-item>
-          <el-menu-item index="2-2" @click="navigateByUrl('/trshow')">时间记录展示</el-menu-item>
-          <el-menu-item index="2-3" @click="navigateByUrl('/tredit')">时间记录修改</el-menu-item>
+          <el-menu-item index="2-1" @click="navigateByUrl('/home/timerecord')">时间记录</el-menu-item>
+          <el-menu-item index="2-2" @click="navigateByUrl('/home/trshow')">时间记录展示</el-menu-item>
+          <el-menu-item index="2-3" @click="navigateByUrl('/home/tredit')" :disabled="mana">时间记录修改</el-menu-item>
         </el-submenu>
-        <el-menu-item index="3">
+        <el-menu-item index="3" @click="navigateByUrl('/home/bill')">
           <i class="el-icon-coin"></i>
           <span>账单相关</span>
         </el-menu-item>
-        <el-menu-item index="4">
+        <el-menu-item index="4" :disabled="sys">
           <i class="el-icon-setting"></i>
           <span>系统设置</span>
         </el-menu-item>
@@ -51,7 +51,8 @@ export default {
   },
   data() {
     return {
-      news: "hello world!"
+      sys: false,
+      mana: false
     };
   },
   methods: {
@@ -60,6 +61,10 @@ export default {
         path: url
       });
     }
+  },
+  created() {
+    this.sys = sessionStorage.getItem("sys") === '0' ? false : true;
+    this.mana = sessionStorage.getItem("mana") === '0' ? false : true;
   }
 };
 </script>

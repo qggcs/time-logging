@@ -6,10 +6,12 @@ import TaskManagement from '../components/task/task-management.vue'
 import TimeRecord from '../components/timerecord/timerecord.vue'
 import TrShow from '../components/timerecord/trshow.vue'
 import TrEdit from '../components/timerecord/tredit.vue'
+import BillManagement from '../components/bill/bill-management.vue'
+import Login from '../components/Login.vue'
 Vue.use(VueRouter)
 
 const routes = [{
-  path: '/',
+  path: '/home',
   name: 'home',
   component: Home,
   children: [{
@@ -27,10 +29,16 @@ const routes = [{
   }, {
     path: 'tredit',
     component: TrEdit
+  }, {
+    path: 'bill',
+    component: BillManagement
   }]
 }, {
-  path: '/home',
-  redirect: "/"
+  path: '/',
+  component: Login
+}, {
+  path: '/login',
+  redirect: '/'
 }]
 
 const router = new VueRouter({

@@ -12,10 +12,10 @@
       <el-divider></el-divider>
     </div>
     <div class="content">
-      <el-table :data="taskList" style="width: 100%" height="300" v-loading="loading">
-        <el-table-column prop="taskName" label="任务名称" width="180"></el-table-column>
-        <el-table-column prop="startTime" label="开始时间" width="160"></el-table-column>
-        <el-table-column prop="endTime" label="结束时间" width="160"></el-table-column>
+      <el-table :data="taskList" style="width: 100%" height="320" v-loading="loading">
+        <el-table-column prop="taskName" label="任务名称" width="200"></el-table-column>
+        <el-table-column prop="startTime" label="开始时间" width="150"></el-table-column>
+        <el-table-column prop="endTime" label="结束时间" width="250"></el-table-column>
         <el-table-column label="分配情况">
           <template slot-scope="scope">
             <el-popover trigger="hover" placement="top">
@@ -37,10 +37,12 @@
             </el-popover>
           </template>
         </el-table-column>
-        <el-table-column label="操作">
+        <el-table-column>
+          <template slot="header">
+            <el-input v-model="search" size="mini" placeholder="输入关键字搜索" />
+          </template>
           <template slot-scope="scope">
             <el-button size="mini" type="primary" @click="open(scope.$index, scope.row)" plain>分配</el-button>
-            <br />
             <el-button
               size="mini"
               type="danger"
