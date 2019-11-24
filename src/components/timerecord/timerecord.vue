@@ -21,15 +21,14 @@
             <li v-for="(tr,i) in item.timerecords" :key="i">
               <div class="row">
                 <div class="left">
-                  <!-- <i class="el-icon-alarm-clock" style="font-size:40px"></i> -->
                   <div style="font-size:20px;line-height:1.2em">
                     <div>{{tr.type}}</div>
                     <div style="font-size:23px;">{{tr.time|timeFilter(tr.time)}}</div>
                   </div>
                 </div>
                 <div class="right">
-                  <i class="el-icon-video-play" style="color:#51c121"></i>
-                  <i class="el-icon-lock" style="color:#f1392f"></i>
+                  <i :class="tr.icon" style="color:#67C23A" @click="beginTimer(tr)"></i>
+                  <i class="el-icon-refresh" style="color:#F56C6C"></i>
                 </div>
               </div>
             </li>
@@ -50,19 +49,26 @@ export default {
           timerecords: [
             {
               type: "工作",
-              time: 51851
+              time: 51851,
+              timer: null,
+              icon: "el-icon-video-play"
             },
             {
               type: "休息",
-              time: 11507
+              time: 11507,
+              icon: "el-icon-video-play"
             },
             {
               type: "交通",
-              time: 17123
+              time: 17123,
+              timer: null,
+              icon: "el-icon-video-play"
             },
             {
               type: "调研",
-              time: 13457
+              time: 13457,
+              timer: null,
+              icon: "el-icon-video-play"
             }
           ]
         },
@@ -71,19 +77,27 @@ export default {
           timerecords: [
             {
               type: "工作",
-              time: 54881
+              time: 54881,
+              timer: null,
+              icon: "el-icon-video-play"
             },
             {
               type: "休息",
-              time: 5004
+              time: 5004,
+              timer: null,
+              icon: "el-icon-video-play"
             },
             {
               type: "交通",
-              time: 1000
+              time: 1000,
+              timer: null,
+              icon: "el-icon-video-play"
             },
             {
               type: "WPS",
-              time: 48246
+              time: 48246,
+              timer: null,
+              icon: "el-icon-video-play"
             }
           ]
         },
@@ -92,19 +106,27 @@ export default {
           timerecords: [
             {
               type: "工作",
-              time: 87246
+              time: 87246,
+              timer: null,
+              icon: "el-icon-video-play"
             },
             {
               type: "休息",
-              time: 1234
+              time: 1234,
+              timer: null,
+              icon: "el-icon-video-play"
             },
             {
               type: "交通",
-              time: 3647
+              time: 3647,
+              timer: null,
+              icon: "el-icon-video-play"
             },
             {
               type: "调研",
-              time: 500
+              time: 500,
+              timer: null,
+              icon: "el-icon-video-play"
             }
           ]
         }
@@ -129,6 +151,23 @@ export default {
           : Math.floor(result % 60);
       result = `${h}:${m}:${s}`;
       return result;
+    }
+  },
+  methods: {
+    beginTimer(tr) {
+      if (tr.timer) {
+        this.pauseTimer(tr);
+        return;
+      }
+      tr.timer = setInterval(() => {
+        tr.time++;
+      }, 1000);
+      tr.icon = "el-icon-video-pause";
+    },
+    pauseTimer(tr) {
+      clearInterval(tr.timer);
+      tr.icon = "el-icon-video-play";
+      tr.timer = null;
     }
   }
 };
@@ -171,12 +210,13 @@ li {
   font-size: 16px;
 }
 
-.right i {
+i {
   cursor: pointer;
   border-radius: 50%;
+  transition: font-weight 1s all;
 }
 
 i:hover {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+  font-weight: 600;
 }
 </style>

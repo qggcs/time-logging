@@ -149,4 +149,12 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+
+.el-table .warning-row {
+  background: oldlace;
+}
+
+.el-table .success-row {
+  background: #f0f9eb;
+}
 </style>
