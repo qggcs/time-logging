@@ -13,4 +13,4 @@ git clone https://github.com/qggcs/time-logging.git
 项目根目录 终端中输入 npm run server
 
 ## 访问
-http://localhost:8080访问该工程
+chrome(FireFox等也可)中输入 http://localhost:8080 访问该工程
